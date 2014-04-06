@@ -11,7 +11,7 @@ This is suitable as a replacement for a large readonly dictionary with largish s
 
 Using perfect hashing, the set of keys is translated into offsets of an indexable type such as a list or numpy array. The resulting object can be dramatically smaller than a dict equivalent would be. The set of keys is not stored.
 
-If fingerprinting is enabled, keys will be checked on lookup against a hash to prevent false positives. Without fingerprinting, you will always get a random value if you get a key that does not exist. With fingerprinting enabled the false positive rate is 1 / ([dict len] * 2 ^ [false positive bits]).
+If fingerprinting is enabled, keys will be checked on lookup against a hash to prevent false positives. Without fingerprinting, you will always get a random value if you get a key that does not exist. With fingerprinting enabled the false positive rate is 1 / ([dict len] * 2 ^ [fingerprint bits]).
 
 Values can be updated, but the container cannot be resized. Setting a key that does not exist will overwrite an existing key.
 
